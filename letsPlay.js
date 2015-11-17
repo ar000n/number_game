@@ -1,8 +1,16 @@
 var readLine=require("readline");
-var a=7,b=3,c=2,d=1,e=4,f=8,g=6,h=5,i=0;
-arr1=[a,b,c];
-arr2=[d,e,f];
-arr3=[g,h,i];
+
+var randomGenerator=function(){
+	var randomNumbers=[];
+	for(var i=0;i<9;i++){
+		var number=Math.round(Math.random() * (8 - 0 + 0));
+		(randomNumbers.indexOf(number)==-1) ? randomNumbers.push(number) :
+		i--;
+	}
+	arr1=randomNumbers.slice(0,3);
+ 	arr2=randomNumbers.slice(3,6);
+ 	arr3=randomNumbers.slice(6,9);
+};
 
 var display=function(arr1,arr2,arr3){
 	arr1=arr1.join(" ");
@@ -51,6 +59,7 @@ var rl=readLine.createInterface({
 console.log("Arrange the numbers in order(1-8).",
 	"\nThe 0 is the 'empty' place.",
 	"\nClick on any number next to 0 and they will switch places.");
+randomGenerator();
 console.log(display(arr1,arr2,arr3));
 
 
