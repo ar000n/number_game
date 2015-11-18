@@ -1,12 +1,14 @@
 var readLine=require("readline");
+var ld=require("lodash");
 
 var randomGenerator=function(){
-	var randomNumbers=[];
-	for(var i=0;i<9;i++){
-		var number=Math.round(Math.random() * (8 - 0 + 0));
-		(randomNumbers.indexOf(number)==-1) ? randomNumbers.push(number) :
-		i--;
-	}
+	var numbers=[0,1,2,3,4,5,6,7,8];
+	randomNumbers=ld.shuffle(numbers);
+	// for(var i=0;i<9;i++){
+	// 	var number=Math.round(Math.random() * (8 - 0 + 0));
+	// 	(randomNumbers.indexOf(number)==-1) ? randomNumbers.push(number) :
+	// 	i--;
+	// }
 	arr1=randomNumbers.slice(0,3);
  	arr2=randomNumbers.slice(3,6);
  	arr3=randomNumbers.slice(6,9);
