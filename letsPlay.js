@@ -24,6 +24,15 @@ var moveAllow=function(number){
 	var numberIndex=elements.indexOf(+number);
 	var zeroIndex=elements.indexOf(0);
 
+	if((numberIndex==2) || (numberIndex==5)){
+		return((numberIndex==zeroIndex+3) || (numberIndex==zeroIndex-3) ||
+		(numberIndex==zeroIndex+1));
+	}
+
+	if((numberIndex==3) || (numberIndex==6)){
+		return((numberIndex==zeroIndex+3) || (numberIndex==zeroIndex-3) ||
+		(numberIndex==zeroIndex-1));
+	}
 	return((numberIndex==zeroIndex+3) || (numberIndex==zeroIndex-3) ||
 		(numberIndex==zeroIndex+1) || (numberIndex==zeroIndex-1));
 };
